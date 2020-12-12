@@ -39,6 +39,6 @@ else
 
 fi
 
-for file in "$fileset_dir"/*.{jar,apk}; do
+for file in "$fileset_dir"/*.jar; do
     run_d2j_dex2jar -nc -o "$dedex_dir/$(basename "$file").dedex.jar" "$file"
 done

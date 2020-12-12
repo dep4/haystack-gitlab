@@ -80,7 +80,7 @@ build_patch_part() {
 
 }
 
-for part in "$patch_source_dir"/*.{jar,apk}; do
+for part in "$patch_source_dir"/*.jar; do
     build_patch_part "$(basename "$part")"
 done
 
