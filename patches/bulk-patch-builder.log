@@ -1,0 +1,117 @@
+********* GENERATE PATCH SOURCES
+
+
+********* BUILD: sigspoof-hook-11.0
+
+****** build: sigspoof-hook-11.0
+****** against: 30-11.0-AS-x86-AVD-api30
+
+>>> target directory: ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-hook-11.0/sigspoof-hook-11.0__30-11.0-AS-x86-AVD-api30
+>>> dedex fileset
+>>> target directory: ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-hook-11.0/sigspoof-hook-11.0__30-11.0-AS-x86-AVD-api30/tmp/dedex
+dex2jar ~/µ/bulk-patch-builder/filesets/30-11.0-AS-x86-AVD-api30/core-libart.jar -> ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-hook-11.0/sigspoof-hook-11.0__30-11.0-AS-x86-AVD-api30/tmp/dedex/core-libart.jar.dedex.jar
+dex2jar ~/µ/bulk-patch-builder/filesets/30-11.0-AS-x86-AVD-api30/core-oj.jar -> ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-hook-11.0/sigspoof-hook-11.0__30-11.0-AS-x86-AVD-api30/tmp/dedex/core-oj.jar.dedex.jar
+dex2jar ~/µ/bulk-patch-builder/filesets/30-11.0-AS-x86-AVD-api30/ext.jar -> ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-hook-11.0/sigspoof-hook-11.0__30-11.0-AS-x86-AVD-api30/tmp/dedex/ext.jar.dedex.jar
+dex2jar ~/µ/bulk-patch-builder/filesets/30-11.0-AS-x86-AVD-api30/framework.jar -> ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-hook-11.0/sigspoof-hook-11.0__30-11.0-AS-x86-AVD-api30/tmp/dedex/framework.jar.dedex.jar
+dex2jar ~/µ/bulk-patch-builder/filesets/30-11.0-AS-x86-AVD-api30/services.jar -> ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-hook-11.0/sigspoof-hook-11.0__30-11.0-AS-x86-AVD-api30/tmp/dedex/services.jar.dedex.jar
+>>> build patch: services.jar
+
+*** apply fileset patch (dry-run)
+>>> apply patch: services.jar
+>>> dexpatcher --api-level 30 --verbose --dry-run --multi-dex ~/µ/bulk-patch-builder/filesets/30-11.0-AS-x86-AVD-api30/services.jar ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-hook-11.0/sigspoof-hook-11.0__30-11.0-AS-x86-AVD-api30/services.jar.dex
+DexPatcher version 1.6.2 by Lanchon (https://dexpatcher.github.io/)
+info: read '~/µ/bulk-patch-builder/filesets/30-11.0-AS-x86-AVD-api30/services.jar'
+info: read '~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-hook-11.0/sigspoof-hook-11.0__30-11.0-AS-x86-AVD-api30/services.jar.dex'
+info: type 'com.android.server.pm.PackageManagerService': method '<init>():void': implicit ignore of trivial default constructor
+info: dry run due to '--dry-run' option
+0 error(s), 0 warning(s)
+
+*** patch-fileset: success
+*** build-patch: success
+
+********* PUBLISH: sigspoof-hook-11.0
+sha256sum:  
+b823d52df08979b278c758ea32d4e312797056cbaa21a3f4a1b45ff451c57937
+********* BUILT AGAINST: 30-11.0-AS-x86-AVD-api30
+
+
+********* APPLY: sigspoof-hook-11.0
+
+****** apply: sigspoof-hook-11.0
+****** to: 30-11.0-AS-x86-AVD-api30
+
+>>> target directory: ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-hook-11.0__fs/30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0
+>>> apply patch: services.jar
+>>> dexpatcher --api-level 30 --verbose --output ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-hook-11.0__fs/30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0/tmp/services.jar/patched-dex --multi-dex ~/µ/bulk-patch-builder/filesets/30-11.0-AS-x86-AVD-api30/services.jar ~/µ/bulk-patch-builder/../patches/sigspoof-hook-11.0/services.jar.dex
+DexPatcher version 1.6.2 by Lanchon (https://dexpatcher.github.io/)
+info: read '~/µ/bulk-patch-builder/filesets/30-11.0-AS-x86-AVD-api30/services.jar'
+info: read '~/µ/bulk-patch-builder/../patches/sigspoof-hook-11.0/services.jar.dex'
+info: type 'com.android.server.pm.PackageManagerService': method '<init>():void': implicit ignore of trivial default constructor
+info: write '~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-hook-11.0__fs/30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0/tmp/services.jar/patched-dex'
+0 error(s), 0 warning(s)
+>>> repack: services.jar
+deleting: classes.dex
+deleting: classes2.dex
+  adding: classes.dex (stored 0%)
+  adding: classes2.dex (stored 0%)
+
+*** patch-fileset: success
+
+
+********* BUILD: sigspoof-core
+
+****** build: sigspoof-core
+****** against: 30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0
+
+>>> target directory: ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-core/sigspoof-core__30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0
+>>> dedex fileset
+>>> target directory: ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-core/sigspoof-core__30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0/tmp/dedex
+dex2jar ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-hook-11.0__fs/30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0/core-libart.jar -> ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-core/sigspoof-core__30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0/tmp/dedex/core-libart.jar.dedex.jar
+dex2jar ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-hook-11.0__fs/30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0/core-oj.jar -> ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-core/sigspoof-core__30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0/tmp/dedex/core-oj.jar.dedex.jar
+dex2jar ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-hook-11.0__fs/30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0/ext.jar -> ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-core/sigspoof-core__30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0/tmp/dedex/ext.jar.dedex.jar
+dex2jar ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-hook-11.0__fs/30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0/framework.jar -> ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-core/sigspoof-core__30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0/tmp/dedex/framework.jar.dedex.jar
+dex2jar ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-hook-11.0__fs/30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0/services.jar -> ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-core/sigspoof-core__30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0/tmp/dedex/services.jar.dedex.jar
+>>> build patch: services.jar
+
+*** apply fileset patch (dry-run)
+>>> apply patch: services.jar
+>>> dexpatcher --api-level 30 --verbose --dry-run --multi-dex ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-hook-11.0__fs/30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0/services.jar ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-core/sigspoof-core__30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0/services.jar.dex
+DexPatcher version 1.6.2 by Lanchon (https://dexpatcher.github.io/)
+info: read '~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-hook-11.0__fs/30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0/services.jar'
+info: read '~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-core/sigspoof-core__30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0/services.jar.dex'
+info: type 'com.android.server.pm.GeneratePackageInfoHook': method '<init>():void': implicit ignore of trivial default constructor
+info: dry run due to '--dry-run' option
+0 error(s), 0 warning(s)
+
+*** patch-fileset: success
+*** build-patch: success
+
+********* PUBLISH: sigspoof-core
+sha256sum:  
+b15402f43375bf2b04b5427be7475b3306d2df5f1b62cb6762b81d0a099f3f55
+********* BUILT AGAINST: 30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0
+
+
+********* APPLY: sigspoof-core
+
+****** apply: sigspoof-core
+****** to: 30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0
+
+>>> target directory: ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-core__fs/30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0__sigspoof-core
+>>> apply patch: services.jar
+>>> dexpatcher --api-level 30 --verbose --output ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-core__fs/30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0__sigspoof-core/tmp/services.jar/patched-dex --multi-dex ~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-hook-11.0__fs/30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0/services.jar ~/µ/bulk-patch-builder/../patches/sigspoof-core/services.jar.dex
+DexPatcher version 1.6.2 by Lanchon (https://dexpatcher.github.io/)
+info: read '~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-hook-11.0__fs/30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0/services.jar'
+info: read '~/µ/bulk-patch-builder/../patches/sigspoof-core/services.jar.dex'
+info: type 'com.android.server.pm.GeneratePackageInfoHook': method '<init>():void': implicit ignore of trivial default constructor
+info: write '~/µ/bulk-patch-builder/../patches/tmp-dir/sigspoof-core__fs/30-11.0-AS-x86-AVD-api30__sigspoof-hook-11.0__sigspoof-core/tmp/services.jar/patched-dex'
+0 error(s), 0 warning(s)
+>>> repack: services.jar
+deleting: classes.dex
+deleting: classes2.dex
+  adding: classes.dex (stored 0%)
+  adding: classes2.dex (stored 0%)
+
+*** patch-fileset: success
+
+
