@@ -1,15 +1,15 @@
 # Update: 
-## 11-attempt (branch)
+## `11-attempt` (branch)
 
 ### AndroidStudio ADV Api30,
 Magisk-ify first: https://github.com/shakalaca/MagiskOnEmulator (canary option), 
 
 then flash https://gitlab.com/oF2pks/haystack/-/blob/11-attempt/spoof_AVDapi30.zip.ONLY'MAGISK&ANDROID-STUDIO and https://github.com/microg/GmsCore/files/5652857/microG_AVDx86api30_magiskMaRViN.zip
 
-### non-odexed android11 roms (R),
-`adb pull /system/framework/services.jar` (with classes.dex into, but without classes3.dex),
+### android11 roms (R) with /system/framework/services.jar/classes.dex
+`adb pull /system/framework/services.jar` (must comes with classes.dex into, but without classes3.dex),
 
-then check use of Linux `java -jar dexpatcher-1.8.0-beta1.jar -a 11 -M -v -d -o ./ services.jar 11-hook-services.jar.dex 11core_services.jar.dex` with latest https://github.com/DexPatcher/dexpatcher-tool/releases.
+then check use of Linux `java -jar dexpatcher-1.8.0-beta1.jar -a 11 -M -v -d -o ./ services.jar 11-hook-services.jar.dex 11core-services.jar.dex` with latest https://github.com/DexPatcher/dexpatcher-tool/releases.
 
 Once done, repack 4x resulting classes_.dex in services.jar to a Magisk systemless module, with Setialpha `org.spoofing.apk` in `/system/framework` (like in spoof_AVDapi30.zip).
 
@@ -18,9 +18,12 @@ Once done, repack 4x resulting classes_.dex in services.jar to a Magisk systemle
 b15402f43375bf2b04b5427be7475b3306d2df5f1b62cb6762b81d0a099f3f55 `11core-services.jar.dex`
 b823d52df08979b278c758ea32d4e312797056cbaa21a3f4a1b45ff451c57937 `11-hook-services.jar.dex`
 
-b5c3320045c3c6dc181b3942d93b8ed61ade3be568ca9244ef128254a658a584 spoof_AVDapi30.zip
+b5c3320045c3c6dc181b3942d93b8ed61ade3be568ca9244ef128254a658a584 `spoof_AVDapi30.zip`
 
 
+(non-open_source lightweight dextra 64/armv7/arm64 brings multiple features for dex files http://newandroidbook.com/tools/dextra.html )
+
+ 
 ## (use `NOsettings` branch for previous 4.1-6.0 & 7.0-10.0)
 ...
 
